@@ -1,26 +1,40 @@
+// explicit types
+let character: string;
+let age: number;
+let isLoggedIn: boolean;
+
+// age = 'Luigi' -> Assignment error
+age = 30;
+
+// isLoggedIn = 24 -> Assignment error
+isLoggedIn = true;
+
 // arrays
-let names = ["Leo", "Rafa", "Luiz"];
+let ninjas: string[] = [];
 
-names.push("Lucas");
-// names.push(10) -> Assignment error
+// union types
+let mixed: (string | number)[] = [];
 
-let numbers = [10, 20, 30];
+// ninjas = [10, 23] -> Assignment error
+ninjas = ["Leo", "Rafa"];
 
-numbers.push(10);
-// numbers.push('Leo') -> Assignment error
+// mixed.push(false) -> Assignment error
+mixed.push(20);
+mixed.push("Leo");
 
-let mixed = [10, "Leo", "Rafa", 140];
-
-mixed.push(10);
-mixed.push("Luiz");
+let uid: string | number;
+// uid = false -> Assignment error
+uid = 123;
+uid = "123";
 
 // objects
-let fighter = {
-  name: "Leo",
-  belt: "black",
-  age: 20,
+let ninjaOne: object;
+ninjaOne = { name: "leo", age: 30 };
+
+let ninjaTwo: {
+  name: string;
+  age: number;
+  beltColour: string;
 };
 
-fighter.age = 18;
-// fighter.age = "Leo" -> Assignment error
-
+ninjaTwo = { name: "leo", age: 30, beltColour: "black" };
