@@ -1,16 +1,7 @@
 "use strict";
-let greet;
-// greet = 'hello' -> Assignment error
-greet = () => {
-    console.log("hello");
+const logDetails = (uid, item) => {
+    console.log(`${item} has an uid of ${uid}`);
 };
-//                                 ? means an optional argument
-const add = (a, b, c) => {
-    console.log(a + b);
-    console.log(c);
+const greetUser = (user) => {
+    console.log(`${user.name} says hello!`);
 };
-add(5, 10);
-const minus = (a, b) => {
-    return a - b;
-};
-const result = minus(5, 10);

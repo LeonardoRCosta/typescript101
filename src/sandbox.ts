@@ -1,21 +1,10 @@
-let greet: Function;
+type stringOrNum = string | number;
+type userProps = { name: string; uid: stringOrNum };
 
-// greet = 'hello' -> Assignment error
-
-greet = () => {
-  console.log("hello");
+const logDetails = (uid: stringOrNum, item: string) => {
+  console.log(`${item} has an uid of ${uid}`);
 };
 
-//                                 ? means an optional argument
-const add = (a: number, b: number, c?: number | string): void => {
-  console.log(a + b);
-  console.log(c);
+const greetUser = (user: userProps) => {
+  console.log(`${user.name} says hello!`);
 };
-
-add(5, 10);
-
-const minus = (a: number, b: number): number => {
-  return a - b;
-}
-
-const result = minus(5, 10);
