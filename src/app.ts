@@ -1,10 +1,27 @@
-// const anchor = document.querySelector("a")!;
+class Invoice {
+  // readonly client: string;
+  // private details: string;
+  // public amount: number;
 
-// // if (anchor) console.log(anchor.href);
+  constructor(
+    readonly client: string,
+    private details: string,
+    public amount: number
+  ) {}
 
-// console.log(anchor.href);
+  format() {
+    return `${this.client} owes £${this.amount} for ${this.details}`;
+  }
+}
 
-// const form = document.querySelector("form");
+const invOne = new Invoice("Leonardo", "Working on PeerBR's payment API", 1300);
+const invTwo = new Invoice("Rafael", "Working on PeerBR's payment API", 1500);
+
+let invoices: Invoice[] = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+
+invoices.forEach((inv) => console.log(inv.client, inv.amount, inv.format()));
 
 const form = document.querySelector(".new-item-form") as HTMLFormElement;
 console.log(form.children);
