@@ -1,18 +1,4 @@
-class Invoice {
-  // readonly client: string;
-  // private details: string;
-  // public amount: number;
-
-  constructor(
-    readonly client: string,
-    private details: string,
-    public amount: number
-  ) {}
-
-  format() {
-    return `${this.client} owes £${this.amount} for ${this.details}`;
-  }
-}
+import { Invoice } from './classes/Invoice.js' // because we are using javascript in the browser we need to import the js module.
 
 const invOne = new Invoice("Leonardo", "Working on PeerBR's payment API", 1300);
 const invTwo = new Invoice("Rafael", "Working on PeerBR's payment API", 1500);
