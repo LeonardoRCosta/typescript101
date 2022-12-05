@@ -1,4 +1,29 @@
-import { Invoice } from './classes/Invoice.js' // because we are using javascript in the browser we need to import the js module.
+interface IsPerson {
+  name: string;
+  age: number;
+  speak(a: string): void;
+  spend(a: number): number;
+}
+
+const me: IsPerson = {
+  name: "Leo",
+  age: 18,
+  speak(text: string): void {
+    console.log(text);
+  },
+  spend(amount: number): number {
+    console.log(`I spent ${amount}`);
+    return amount;
+  },
+};
+
+const greetPerson = (person: IsPerson) => console.log(`greetings ${person.name}`);
+
+greetPerson(me);
+
+console.log(me);
+
+import { Invoice } from "./classes/Invoice.js"; // because we are using javascript in the browser we need to import the js module.
 
 const invOne = new Invoice("Leonardo", "Working on PeerBR's payment API", 1300);
 const invTwo = new Invoice("Rafael", "Working on PeerBR's payment API", 1500);
