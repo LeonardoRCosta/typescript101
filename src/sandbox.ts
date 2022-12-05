@@ -1,10 +1,20 @@
-type stringOrNum = string | number;
-type userProps = { name: string; uid: stringOrNum };
+let greet: (a: string, b: string) => void;
 
-const logDetails = (uid: stringOrNum, item: string) => {
-  console.log(`${item} has an uid of ${uid}`);
+greet = (name: string, greeting: string) => {
+  console.log(`${name} says ${greeting}`);
 };
 
-const greetUser = (user: userProps) => {
-  console.log(`${user.name} says hello!`);
+let calc: (a: number, b: number, c: string) => number;
+
+calc = (numOne: number, numTwo: number, action: string): number => {
+  if (action !== "add") return numOne - numTwo;
+  return numOne + numTwo;
+};
+
+let logDetails: (obj: { name: string; age: number }) => void;
+
+type person = { name: string; age: number };
+
+logDetails = (ninja: person) => {
+  console.log(`${ninja.name} is ${ninja.age} years old`);
 };
