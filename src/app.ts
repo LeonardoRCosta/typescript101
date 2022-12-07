@@ -25,5 +25,36 @@ form.addEventListener("submit", (e: Event) => {
     doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
   }
 
-  list.render(doc, type.value, 'end');
+  list.render(doc, type.value, "end");
 });
+
+// Generics
+
+const addUID = <T extends { name: string }>(obj: T) => {
+  let uid = Math.floor(Math.random() * 100);
+  return { ...obj, uid };
+};
+
+let docOne = addUID({ name: 'Leonardo', age: 18 })
+
+console.log(docOne.age)
+
+// With interfaces
+
+interface Resource<T> {
+  uid: number;
+  resourceName: string;
+  data: T;
+}
+
+const docThree: Resource<string> = {
+  uid: 122,
+  resourceName: 'person',
+  data: 'leonardo'
+}
+
+const docFour: Resource<string[]> = {
+  uid: 33,
+  resourceName: 'shoppingList',
+  data: ['Milk', 'Apple', 'Coffee']
+}
